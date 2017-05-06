@@ -70,8 +70,9 @@ sudo yum -y install vsftpd
 echo "anonymous_enable=NO
 pasv_enable=YES
 pasv_min_port=1024
-pasv_max_port=1048
-pasv_address=54.245.220.34" >> ~/../../etc/vsftpd/vsftpd.conf
+pasv_max_port=1048" >> ~/../../etc/vsftpd/vsftpd.conf
+read -p "Enter IP Address: "  ipaddress
+echo "pasv_address=$ipadress" >> ~/../../etc/vsftpd/vsftpd.conf
 sudo /etc/init.d/vsftpd restart
 sudo passwd ec2-user
 sudo chkconfig --level 345 vsftpd on
