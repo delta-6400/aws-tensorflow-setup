@@ -50,7 +50,7 @@ sudo sed -i 's/tkagg/agg/' $MATPLOTLIBRC
 # Install tensorflow-wavenet
 echo "Installing tensorflow-wavenet"
 cd /home/ec2-user/src
-git clone https://github.com/delta6400/tensorflow-wavenet.git
+git clone https://github.com/delta-6400/tensorflow-wavenet.git
 cd tensorflow-wavenet
 sudo env PATH=$PATH `which pip` install -r requirements.txt
 sudo chown -R ec2-user:ec2-user .
