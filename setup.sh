@@ -67,7 +67,11 @@ echo "Installing youtube-dl"
 sudo yum -y install youtube-dl
 echo "Installing vsftpd"
 sudo yum -y install vsftpd
-sudo mv ~/src/tensorflow-wavenet/vsftpd/vsftpd.conf ~/../../etc/vsftpd/vsftpd.conf
+echo "anonymous_enable=NO
+pasv_enable=YES
+pasv_min_port=1024
+pasv_max_port=1048
+pasv_address=34.210.74.18" >> ~/../../etc/vsftpd/vsftpd.conf
 sudo /etc/init.d/vsftpd restart
 sudo passwd ec2-user
 sudo chkconfig --level 345 vsftpd on
